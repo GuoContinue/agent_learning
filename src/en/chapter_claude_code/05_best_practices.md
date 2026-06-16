@@ -1,10 +1,10 @@
-# 15.5 Production Practice: Using Claude Code Effectively in Teams
+# 14.5 Production Practice: Using Claude Code Effectively in Teams
 
 > 🏗️ *"The tool itself doesn't matter — what matters is the engineering standards you build around it."*
 
 ---
 
-After studying the previous four sections, you've mastered Claude Code's architectural principles, permission system, extension mechanisms, and multi-Agent capabilities. This section is the conclusion of Chapter 15, focusing on one core question: **How do you use Claude Code reliably in real teams and production environments?**
+After studying the previous four sections, you've mastered Claude Code's architectural principles, permission system, extension mechanisms, and multi-Agent capabilities. This section is the conclusion of Chapter 14, focusing on one core question: **How do you use Claude Code reliably in real teams and production environments?**
 
 This is not theory — it's a summary of experience from engineering practice.
 
@@ -120,10 +120,10 @@ The reason is "context anxiety" — when the model faces a massive number of rul
 
 # ✅ Correct: main file as a table of contents, details split out
 ## Architecture Constraints
-Core rules here (10 lines); full explanation at [docs/architecture.md](./docs/architecture.md)
+Core rules here (10 lines); full explanation at docs/architecture.md（见 `./docs/architecture.md`）
 
 ## Code Style
-See [.eslintrc.js](./.eslintrc.js) and [docs/code-style.md](./docs/code-style.md)
+See [.eslintrc.js](./.eslintrc.js) and docs/code-style.md（见 `./docs/code-style.md`）
 ```
 
 **Golden rule**: Keep the CLAUDE.md main file to 150–300 lines; use links to reference detailed documentation.
@@ -221,9 +221,9 @@ _Last updated: 2026-04-01 | Scope: All AI Agents working in this codebase_
 **Project**: [Project Name]  
 **Tech Stack**: TypeScript 5.3 / Node.js 20 / PostgreSQL 15 / Prisma / Jest  
 **Documentation Index**:
-- Architecture design: [docs/architecture.md](./docs/architecture.md)
-- API specification: [docs/api-spec.md](./docs/api-spec.md)
-- Testing strategy: [docs/testing.md](./docs/testing.md)
+- Architecture design: docs/architecture.md（见 `./docs/architecture.md`）
+- API specification: docs/api-spec.md（见 `./docs/api-spec.md`）
+- Testing strategy: docs/testing.md（见 `./docs/testing.md`）
 
 ---
 
@@ -643,15 +643,15 @@ npm update -g @anthropic-ai/claude-code
 
 ## VI. Chapter Summary
 
-### Chapter 15 Knowledge Review
+### Chapter 14 Knowledge Review
 
 | Section | Core Content | Key Insight |
 |---------|-------------|------------|
-| **15.1 Basics & Architecture** | Six-layer architecture, System Prompt static/dynamic partitioning | Prompt Caching is the core design for cost reduction |
-| **15.2 Permission System** | 7 permission modes, 6-stage decision pipeline | bypassPermissions must never be used in production |
-| **15.3 Extension Mechanisms** | MCP, Hooks, Skills, Sub-agents | PreToolUse Hook is the strongest interception point |
-| **15.4 Multi-Agent Collaboration** | Coordinator/Worker pattern, ULTRAPLAN | Task decomposition is the key to multi-Agent success |
-| **15.5 Production Practice** | CLAUDE.md, team collaboration, security, cost | Engineering standards matter more than the tool itself |
+| **14.1 Basics & Architecture** | Six-layer architecture, System Prompt static/dynamic partitioning | Prompt Caching is the core design for cost reduction |
+| **14.2 Permission System** | 7 permission modes, 6-stage decision pipeline | bypassPermissions must never be used in production |
+| **14.3 Extension Mechanisms** | MCP, Hooks, Skills, Sub-agents | PreToolUse Hook is the strongest interception point |
+| **14.4 Multi-Agent Collaboration** | Coordinator/Worker pattern, ULTRAPLAN | Task decomposition is the key to multi-Agent success |
+| **14.5 Production Practice** | CLAUDE.md, team collaboration, security, cost | Engineering standards matter more than the tool itself |
 
 ### The Engineering Philosophy Claude Code Represents
 
@@ -668,7 +668,7 @@ The best CLAUDE.md is not the longest, but the most precise. The best workflow i
 
 ### Career Implications for AI Engineers
 
-As described in Chapter 9 (Harness Engineering), the role of engineers is undergoing a fundamental transformation:
+As described in Chapter 8 (Harness Engineering), the role of engineers is undergoing a fundamental transformation:
 
 ![Engineer Value Transformation in the AI Era](../svg/chapter_claude_code_05_engineer_value.svg)
 
@@ -676,11 +676,11 @@ Mastering Claude Code is not the end goal — understanding how to **design cons
 
 ---
 
-> 🎉 **Congratulations on completing all of Chapter 15!**  
+> 🎉 **Congratulations on completing all of Chapter 14!**  
 > From Claude Code's architectural principles to production practice, from the permission system to multi-Agent collaboration, you've systematically mastered all the knowledge needed to use Claude Code effectively in production environments.  
 > Now go create your first `CLAUDE.md` in your project — that's where truly mastering the essence of this chapter begins.
 
 ---
 
-*Previous section: [15.4 Advanced Usage: MCP, Hooks, and Skills](./04_advanced_usage.md)*  
-*Back to chapter home: [Chapter 15: Claude Code Deep Dive](./README.md)*
+*Previous section: [14.4 Advanced Usage: MCP, Hooks, and Skills](./04_advanced_usage.md)*  
+*Back to chapter home: [Chapter 14: Claude Code Deep Dive](./README.md)*

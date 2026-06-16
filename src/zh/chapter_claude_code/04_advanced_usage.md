@@ -293,7 +293,7 @@ Hooks 在 `.claude/settings.json`（项目级）或 `~/.claude/settings.json`（
 }
 ```
 
-Hook 脚本通过**标准输入（stdin）**接收工具调用的 JSON 数据：
+Hook 脚本通过**标准输入（stdin）** 接收工具调用的 JSON 数据：
 
 ```json
 // PreToolUse 时，stdin 接收到的数据格式示例
@@ -525,10 +525,9 @@ Skills 是 Claude Code 的**工作流模板系统**——把"你反复告诉 Cla
 
 ### 第一步：获取变更范围
 如果是 PR Review，先运行：
-```bash
-git diff main...HEAD --stat      # 了解变更文件列表
-git diff main...HEAD             # 获取完整 diff
-```
+
+    git diff main...HEAD --stat      # 了解变更文件列表
+    git diff main...HEAD             # 获取完整 diff
 
 如果是直接代码审查，读取相关文件。
 
@@ -626,6 +625,7 @@ Claude Code 提供了三级压缩策略来应对这一问题：
 
 ![三级上下文压缩策略](../svg/chapter_claude_code_04_context_compression.svg)
 
+```
     85% 以上： ⚡⚡⚡ 建议手动 /clear（完全重置）
                保留：CLAUDE.md 中的项目配置（下次自动加载）
                丢弃：所有对话历史
@@ -667,7 +667,7 @@ Claude Code 将**长期记忆**和**会话状态**分开管理，避免压缩时
 
 ---
 
-## 本节小结
+## 小结
 
 | 机制 | 核心价值 | 配置位置 | 学习优先级 |
 |------|---------|---------|-----------|

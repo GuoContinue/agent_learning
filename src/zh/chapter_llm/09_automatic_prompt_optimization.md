@@ -14,6 +14,8 @@
 
 于是，一个新的方向出现了：**Prompt 自动调优（Automatic Prompt Optimization）**。
 
+> 📌 **承接 2.3**：[2.3 提示策略](./03_prompting_strategies.md) 末尾已对 APO 做过概念性预告，本节是它的完整展开——系统梳理方法谱系、GEPA 反思式进化、反馈函数设计与过拟合防治。
+
 它想解决的问题很直接：
 
 > 能不能让系统自己运行任务、发现失败、阅读反馈、反思原因、重写 Prompt，并保留更好的版本？
@@ -1020,7 +1022,7 @@ GEPA 的输出不是一个新模型，而是一组优化后的 Prompt：
 
 ### 1. 记录执行轨迹
 
-**轨迹（trace）**是一轮运行中发生了什么的完整记录。在 Agent 系统中，它可能包括：
+**轨迹（trace）** 是一轮运行中发生了什么的完整记录。在 Agent 系统中，它可能包括：
 
 ```text
 用户输入
@@ -1241,7 +1243,7 @@ best_prompt = select_final_prompt(pareto_front, regression_tests, safety_tests)
 使用的模型包括：
 
 - Qwen3-8B。
-- GPT-4.1 Mini。
+- GPT-4o Mini。
 
 对比方法包括：
 
@@ -1255,8 +1257,8 @@ best_prompt = select_final_prompt(pareto_front, regression_tests, safety_tests)
 | 模型 | Baseline | 对比方法表现 | GEPA 表现 |
 |------|----------|--------------|-----------|
 | Qwen3-8B | 45.23 | GRPO 48.91，MIPROv2 47.84 | **54.85** |
-| GPT-4.1 Mini | 53.03 | MIPROv2 58.67，TextGrad 59.14 | **65.22** |
-| GPT-4.1 Mini + Merge | 53.03 | - | **66.36** |
+| GPT-4o Mini | 53.03 | MIPROv2 58.67，TextGrad 59.14 | **65.22** |
+| GPT-4o Mini + Merge | 53.03 | - | **66.36** |
 
 论文报告中，GEPA 相比 GRPO 平均高约 6%，最高高约 20%，同时 rollout 数最多可以少 35 倍。
 
@@ -2161,7 +2163,7 @@ Prompt 自动调优放大的是工程纪律，而不是替代工程纪律。
 
 ---
 
-## 本节小结
+## 小结
 
 | 主题 | 关键要点 |
 |------|----------|

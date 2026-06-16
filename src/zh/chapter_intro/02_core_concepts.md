@@ -4,7 +4,7 @@
 
 ## 1. 从强化学习到大模型：Agent 定义的演进
 
-在探讨正式定义之前，我们需要理清 Agent（智能体）概念的历史脉络。Agent 并非大语言模型（LLM）时代的全新发明。早在强化学习（Reinforcement Learning, RL）主导的时期，Agent 就被用来描述在特定环境（Environment）中，通过不断的试错（Trial and Error）来最大化累积奖励（Cumulative Reward）的算法实体（例如击败人类围棋冠军的 AlphaGo）。
+在探讨正式定义之前，我们需要理清 Agent（智能体）概念的历史脉络。Agent 并非大语言模型（LLM）时代的全新发明。早在强化学习（Reinforcement Learning, RL）主导的时期，Agent 就被用来描述在特定环境（Environment）中，通过不断地和环境交互试错（Trial and Error）来最大化累积奖励（Cumulative Reward）的算法实体（例如击败人类围棋冠军的 AlphaGo）。
 
 然而，传统 RL 时代的 Agent 存在明显的局限性：它们往往局限于特定的封闭环境（如规则明确的棋盘或游戏），在面对全新的开放式任务时存在严重的**冷启动问题（Cold-start Problem）**，且极难将学到的策略泛化、迁移到其他领域。
 
@@ -24,7 +24,7 @@
 
 ### 特征1：自主性（Autonomy）—— 从“指令驱动”到“目标驱动”
 
-传统软件工程是**指令驱动（Instruction-driven）**的，系统的状态流转依赖于开发者预先编写的静态 DAG（有向无环图）或繁杂的 `if-else` 控制流。一旦遇到预期外的数据分布，流水线就会崩溃。而 Agent 是**目标驱动（Goal-driven）**的。
+传统软件工程是**指令驱动**（Instruction-driven）的，系统的状态流转依赖于开发者预先编写的静态 DAG（有向无环图）或繁杂的 `if-else` 控制流。一旦遇到预期外的数据分布，流水线就会崩溃。而 Agent 是**目标驱动**（Goal-driven）的。
 
 Agent 能够在没有任何人类硬编码规则、甚至没有给出具体执行步骤的情况下，利用大模型的上下文学习能力（In-context Learning），自主在未知的状态空间中探索并规划执行路径。
 
@@ -68,7 +68,7 @@ Agent 必须能够从外界获取信息，理解当前的“环境”状态。�
 
 ### 特征4：行动能力（Action）—— 跨越虚拟与现实的边界
 
-Agent 通过**工具调用（Tool Calling / Function Calling）**跨越数字边界。工具是 Agent 的“四肢”。当 Agent 在推理阶段决定需要实时数据或物理执行时，它会输出特定格式的结构化指令（通常是 JSON），从而触发外部系统的原生代码。
+Agent 通过**工具调用**（Tool Calling / Function Calling）跨越数字边界。工具是 Agent 的“四肢”。当 Agent 在推理阶段决定需要实时数据或物理执行时，它会输出特定格式的结构化指令（通常是 JSON），从而触发外部系统的原生代码。
 
 工具调用可以理解为一份“可行动作说明书”。其中最重要的信息包括：
 
@@ -83,9 +83,9 @@ Agent 通过**工具调用（Tool Calling / Function Calling）**跨越数字边
 
 ### 特征5：学习与适应能力（Learning & Adaptation）—— 记忆机制与防疲劳控制
 
-这是区分“玩具级 Agent”和“工业级 Agent”的终极分水岭。一个强大的 Agent 系统在面临连续交互或环境数据分布发生偏移（Data Drift）时，必须具备**记忆（Memory）与自我反思（Reflection）机制**。
+这是区分“玩具级 Agent”和“工业级 Agent”的终极分水岭。一个强大的 Agent 系统在面临连续交互或环境数据分布发生偏移（Data Shift）时，必须具备**记忆（Memory）与自我反思（Reflection）机制**。
 
-在真实的业务流中（例如广告推荐或内容分发 Agent），如果系统仅仅是一个贪心算法，不断地向用户推荐 pCTR（预估点击率）最高的内容，很快就会导致**内容同质化（Content Homogenization）**。用户在连续接收相似的多模态刺激后，会产生严重的**疲劳效应（Fatigue Effect）**，进而导致后链路的转化率（pCVR）断崖式下跌。
+在真实的业务流中（例如广告推荐或内容分发 Agent），如果系统仅仅是一个贪心算法，不断地向用户推荐 pCTR（预估点击率）最高的内容，很快就会导致**内容同质化（Content Homogenization）**，陷入信息茧房。用户在连续接收相似的多模态刺激后，会产生严重的**疲劳效应（Fatigue Effect）**，进而导致后链路的转化率（pCVR）断崖式下跌。
 
 具备适应能力的 Agent 会利用长短期记忆机制进行动态干预，主动打破信息茧房：
 
@@ -110,18 +110,18 @@ Agent 通过**工具调用（Tool Calling / Function Calling）**跨越数字边
 
 | 核心组件 | 工程隐喻 | 架构职责与技术栈体现 |
 | :--- | :--- | :--- |
-| **LLM Engine** | CPU / 算术逻辑单元 | 负责复杂语义的理解、常识推理和自然语言生成。依赖于大参数量基座模型（如 GPT-4o, Claude, Gemini, Qwen 等）。 |
+| **LLM Engine** | CPU / 算术逻辑单元 | 负责复杂语义的理解、常识推理和自然语言生成。依赖于大参数量基座模型（如 GPT-5、Claude、Gemini、Qwen 等）。 |
 | **Planning** | 操作系统调度器 | 负责宏大目标的拆解（Sub-goal Decomposition），管理任务流的时序与并发执行。涉及 ReAct 框架或复杂状态机编排。 |
 | **Memory** | 内存与硬盘系统 | 维持 Agent 的上下文连贯性与长期进化。**短期记忆**依赖大模型的 Context Window；**长期记忆**依赖 Vector DB（如 Milvus）进行 RAG 检索。 |
 | **Tools/Action** | 外设接口（I/O） | 赋予虚拟大脑干预物理/数字现实的能力。涉及 OpenAPI Schema 自动解析、沙盒代码执行环境（Python Sandbox）。 |
 
 ---
 
-## 本节小结
+## 小结
 
 如果说大语言模型是一颗被供奉在数据中心里、拥有海量知识却无法直接移动的“大脑”，那么 Agent 框架就是为其连接上了感知复杂环境的“多模态传感器”、存储过往踩坑经验的“海马体”（记忆系统），以及能够改变现实世界的“四肢”（工具 API）。
 
-Agent 的出现，正式宣告了人工智能从**“对话时代（Chat Paradigm）”**全面迈向了**“行动时代（Action Paradigm）”**。
+Agent 的出现，正式宣告了人工智能从 **“对话时代（Chat Paradigm）”** 全面迈向了 **“行动时代（Action Paradigm）”**。
 
 ---
 

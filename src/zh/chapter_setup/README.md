@@ -21,10 +21,10 @@
 
 | 小节 | 内容 | 预计时间 |
 |------|------|---------|
-| 2.1 Python 环境与依赖管理 | venv、conda、uv 对比与使用 | 20分钟 |
-| 2.2 关键库安装 | LangChain、OpenAI SDK 等 | 15分钟 |
-| 2.3 API Key 管理 | .env 文件、环境变量最佳实践 | 10分钟 |
-| 2.4 Hello Agent！ | 第一个完整的 Agent | 30分钟 |
+| F.1 Python 环境与依赖管理 | venv、conda、uv 对比与使用 | 20分钟 |
+| F.2 关键库安装 | LangChain、OpenAI SDK 等 | 15分钟 |
+| F.3 API Key 管理 | .env 文件、环境变量最佳实践 | 10分钟 |
+| F.4 Hello Agent！ | 第一个完整的 Agent | 30分钟 |
 
 ## 前置要求
 

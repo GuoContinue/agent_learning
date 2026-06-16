@@ -266,7 +266,7 @@ def context_collapse_demo():
 
 ### ACE 框架：让上下文自我进化
 
-ACE 的核心创新是将上下文视为**"不断演变的战术手册"（Evolving Playbook）**，通过三个模块化阶段实现自我改进：
+ACE 的核心创新是将上下文视为 **"不断演变的战术手册"（Evolving Playbook）** ，通过三个模块化阶段实现自我改进：
 
 ```python
 class ACEFramework:
@@ -771,7 +771,7 @@ class DynamicToolContext:
 
 ### 1. Retrieval-Augmented Context（检索增强上下文）
 
-将 RAG（第7章）和上下文工程结合，**不是把所有信息塞进上下文，而是建立"按需检索"的机制**。这与 Anthropic 的 JIT 策略一脉相承：
+将 RAG（第6章）和上下文工程结合，**不是把所有信息塞进上下文，而是建立"按需检索"的机制**。这与 Anthropic 的 JIT 策略一脉相承：
 
 ```python
 # 传统方式：把所有可能相关的文档都放进上下文
@@ -823,7 +823,7 @@ messages = [
 
 ### 3. 多 Agent 上下文共享
 
-在多 Agent 系统（第14章）中，上下文的跨 Agent 传递和共享是一个活跃的研究方向。核心挑战是：**如何让多个 Agent 高效协作，而不需要每个 Agent 都携带完整上下文？**
+在多 Agent 系统（第15章）中，上下文的跨 Agent 传递和共享是一个活跃的研究方向。核心挑战是：**如何让多个 Agent 高效协作，而不需要每个 Agent 都携带完整上下文？**
 
 ```python
 class SharedContextStore:
@@ -898,7 +898,7 @@ class ContextQualityMetrics:
 
 > 💡 **延伸阅读**：关于分层记忆架构（Core/Working/Archive 三层）的工程实践，详见 [4.7 实战：MemGPT/Letta 记忆架构工程实践](../chapter_memory/06b_memgpt_practice.md)。
 
-## 本节小结
+## 小结
 
 | 进展方向 | 核心突破 | 对 Agent 开发的实际影响 |
 |---------|---------|----------------------|
@@ -937,7 +937,7 @@ class ContextQualityMetrics:
 
 ## 📰 最新论文速递
 
-> 🗓️ 本节由每日自动更新任务维护，最近更新：**2026 年 5 月 3 日**
+> 🗓️ 本节由每日自动更新任务维护，最近更新：**2026 年 5 月 31 日**
 
 ### [上下文工程：从提示词工程到企业多 Agent 架构的范式演进](https://arxiv.org/abs/2603.09619)
 
@@ -958,3 +958,34 @@ class ContextQualityMetrics:
 **与本章关系**：直接扩展了本章 7.5 节 KV Cache 优化（ChunkKV/RocketKV/MLA 等）的技术谱系，补充了分布式推理服务场景下的并行化优化新方向。
 
 ---
+
+### [ACC：将 Agent 轨迹编译为长上下文训练数据](https://arxiv.org/abs/2605.21850)
+
+**发表**：2026 年 5 月 21 日 | [arXiv:2605.21850](https://arxiv.org/abs/2605.21850)
+
+**核心贡献**：Agent 在解决问题时产生大量跨轮次轨迹，标准 SFT 只监督工具调用格式而遮蔽工具响应，导致分散在远端上下文中的证据链无法被有效学习。本文提出 Agent Context Compilation（ACC），将搜索、软件工程、数据库查询等 Agent 的轨迹转换为"长上下文问答对"——把原始问题与跨轮工具响应整合为单一长文本，训练模型直接在长上下文中推理而无需工具调用。ACC 使 Qwen3-30B-A3B 在 MRCR（跨轮引用消解）上提升 18.1 分，在 GraphWalks（长图遍历）上提升 7.6 分，效果媲美 Qwen3-235B-A22B，且通用能力无损。
+
+**与本章关系**：直接对应本章"如何利用 Agent 轨迹提升长上下文推理能力"的核心议题，展示了将 Agentic 数据转化为长上下文训练信号的全新工程路径。
+
+---
+
+### [PEEK：用上下文地图作为长上下文 Agent 的方向缓存](https://arxiv.org/abs/2605.19932)
+
+**发表**：2026 年 5 月 19 日 | [arXiv:2605.19932](https://arxiv.org/abs/2605.19932)
+
+**核心贡献**：长上下文 Agent 在重复操作同一文档库或代码仓时，每次调用都要重新定向——浪费大量推理步骤和 token。PEEK 提出以"上下文地图"（Context Map）作为持久化方向缓存，嵌入 Agent Prompt 中跨调用复用：Distiller 从推理信号中提取可迁移知识，Cartographer 将其结构化编辑进地图，priority-based Evictor 保持固定 token 预算。相比最强基线 ACE，PEEK 在长上下文推理和聚合任务上提升 6.3–34.0%，同时减少 93–145 次迭代，成本降低 1.7–5.8 倍。
+
+**与本章关系**：对应本章"Agent 上下文管理策略"知识点，是将"反复读取同一外部上下文"的低效模式转化为"可编程可复用方向缓存"的创新方案，与 KV Cache 复用技术形成系统层-应用层互补。
+
+---
+
+### [LongSeeker：弹性上下文编排——长视野搜索 Agent 的动态工作记忆管理](https://arxiv.org/abs/2605.05191)
+
+**发表**：2026 年 5 月 6 日 | [arXiv:2605.05191](https://arxiv.org/abs/2605.05191)
+
+**核心贡献**：长视野搜索 Agent 在多轮推理和工具调用中会积累大量中间内容，被动累积导致上下文爆炸、成本激增和推理退化。本文提出 **Context-ReAct** 范式，在标准 ReAct 循环中引入五种原子上下文操作（Skip/Compress/Rollback/Snippet/Delete），Agent 在每步生成推理和工具调用时同步生成上下文操作指令，从而实现弹性、多分辨率的工作记忆管理。在此范式上微调的 **LongSeeker**（Qwen3-30B-A3B + 10k 合成轨迹）在 BrowseComp 上达到 **61.5%**，超越通义 DeepResearch（43.2%）近 20 个百分点，在 BrowseComp-ZH 上同样大幅领先。
+
+**与本章关系**：直接对应本章"上下文生命周期管理"与"Agent 工作记忆弹性调控"核心主题，将上下文管理从外部工程启发式（长度阈值触发）提升为 Agent 内生的第一类操作，是 Context Engineering 走向"端到端可学习"的最新里程碑。
+
+---
+

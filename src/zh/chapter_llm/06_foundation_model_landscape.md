@@ -35,7 +35,7 @@
 
 ### 趋势二：MoE 与效率革命
 
-大模型越来越大，但**推理成本却在降低**——背后是**混合专家模型（Mixture of Experts, MoE）**的全面胜利。
+大模型越来越大，但**推理成本却在降低**——背后是**混合专家模型（Mixture of Experts, MoE）** 的全面胜利。
 
 MoE 的核心思想：模型总参数量可以很大（数千亿），但每次推理只激活其中一小部分。就像一家大公司有几百名员工，但每个项目只抽调最合适的十几个人。
 
@@ -65,7 +65,7 @@ class MixtureOfExperts:
 | **Kimi K2.6** | 1T | 32B | K2 升级版，13 小时编码，300 子智能体并行，SWE-bench Pro 58.6% |
 | **Kimi K2** | 1T | 32B | MuonClip 优化器，万亿参数开源 MoE |
 | **Qwen3.6-35B-A3B** | 35B | 3B | 2026.04 发布，轻量 MoE，极致效率 |
-| **Llama 4 Maverick** | ~400B | 17B | 128 专家，原生多模态，文本生成超越 GPT-4.1 |
+| **Llama 4 Maverick** | ~400B | 17B | 128 专家，原生多模态，文本生成超越 GPT-4o |
 | **Qwen3-235B-A22B** | 235B | 22B | 混合推理，Apache 2.0，登顶开源榜 |
 | **Qwen3-30B-A3B** | 30B | 3B | 轻量 MoE，单卡可跑 |
 | **DeepSeek-V3** | 671B | 37B | MoE 架构，557 万美元训练成本，性价比之王 |
@@ -84,7 +84,7 @@ class MixtureOfExperts:
 - **Kimi K2**（Moonshot AI，2025.07）：1T 总参/32B 激活 MoE，MuonClip 优化器训练效率翻倍，开源 Agent 能力 SOTA，兼容 OpenAI/Anthropic API
 - **Qwen3-235B-A22B**（阿里，2025.04）：235B MoE 混合推理，性能超越 DeepSeek-R1 和 o1，Apache 2.0
 - **DeepSeek-V3-0324**（DeepSeek，2025.03）：685B MoE，编程能力超越 Claude 3.7，开源协议更宽松
-- **Llama 4 Maverick**（Meta，2025.04）：~400B MoE 多模态，文本生成超越 GPT-4.1
+- **Llama 4 Maverick**（Meta，2025.04）：~400B MoE 多模态，文本生成超越 GPT-4o
 
 **第二梯队（轻量高效，单卡可跑）**：
 - **Qwen3.6-35B-A3B**（阿里，2026.04）：35B 总参/3B 激活，轻量 MoE，极致效率
@@ -162,7 +162,7 @@ response = client.chat.completions.create(
 | **GPT-5** | 2025.08 | 文本+图像+音频 | 文本+图像+音频 | 实时语音对话，原生图像生成，Computer Use |
 | **Claude Opus 4.6** | 2026.02 | 文本+图像+PDF | 文本 | 1M 上下文（Beta），企业级 Agent 工作流 |
 | **Gemini 2.5 Pro** | 2025.03 | 文本+图像+视频+音频 | 文本+图像 | 原生视频理解，1M 上下文，推理预算控制 |
-| **Llama 4 Maverick** | 2025.04 | 文本+图像 | 文本 | 开源多模态 MoE，文本生成超越 GPT-4.1 |
+| **Llama 4 Maverick** | 2025.04 | 文本+图像 | 文本 | 开源多模态 MoE，文本生成超越 GPT-4o |
 | **Gemma 4-31B** | 2026.04 | 文本+图像+视频 | 文本 | Apache 2.0，Arena 全球开源前三 |
 | **Gemma 4-E2B/E4B** | 2026.04 | 文本+图像+音频 | 文本 | 手机可跑，Apache 2.0，原生音视频 |
 | **Phi-4-multimodal** | 2025.02 | 文本+图像+语音 | 文本 | 仅 5.6B 参数，统一多模态架构 |
@@ -171,7 +171,7 @@ response = client.chat.completions.create(
 
 ## 小模型的崛起：SLM 与端侧部署
 
-**小语言模型（Small Language Models, SLM）**的进步速度令人瞩目——2025 年的 14B 参数模型已全面超越 2023 年的 GPT-4。
+**小语言模型（Small Language Models, SLM）** 的进步速度令人瞩目——2025 年的 14B 参数模型已全面超越 2023 年的 GPT-4。
 
 ```python
 # 小模型的惊人表现（2025—2026 年基准测试数据）
@@ -230,7 +230,7 @@ def select_model(requirements: dict) -> str:
             return "DeepSeek-V3 API / o4-mini"  # 性价比推理
     
     if budget < 50:
-        return "DeepSeek-V3 API / GPT-4.1-mini"  # 极致性价比
+        return "DeepSeek-V3 API / GPT-4o-mini"  # 极致性价比
     
     return "GPT-5 / Claude Sonnet 4"  # 通用均衡之选
 ```
@@ -241,7 +241,7 @@ def select_model(requirements: dict) -> str:
 |-----------|---------|------|
 | 编程助手 | Claude Opus 4.7 / Kimi K2.6 | SWE-bench 双料第一，K2.6 性价比极高（Opus 4.6 的 1/8） |
 | 数据分析 | GPT-5.4 / Gemini 2.5 Pro | 多模态理解 + 函数调用稳定 |
-| 客服对话 | GPT-4.1-mini / Qwen3-8B | 成本敏感，响应速度要求高 |
+| 客服对话 | GPT-4o-mini / Qwen3-8B | 成本敏感，响应速度要求高 |
 | 深度研究 | Claude Opus 4.6 / GPT-5.4 | 1M 上下文 + 深度推理 |
 | 文档处理 | Gemini 2.5 Pro / Claude Opus 4.6 | 1M 超长文档输入，PDF 布局理解 |
 | 本地隐私 | Kimi K2.6 / Qwen3-235B (自部署) | 数据不出本地，Agent 能力完整，K2.6 开源 |
@@ -262,7 +262,7 @@ def select_model(requirements: dict) -> str:
 2025.04  o3 / o4-mini ── OpenAI 多模态推理，首次"看图思考"
 2025.04  Qwen3 ── 阿里混合推理全系列（0.6B~235B），Apache 2.0
 2025.05  Claude 4 (Opus 4 / Sonnet 4) ── 连续编程 7 小时，SWE-bench 72.5%
-2025.05  GPT-4.1 ── 100 万 token 上下文，编程能力大幅提升
+2025.05  GPT-4o ── 100 万 token 上下文，编程能力大幅提升
 2025.07  Kimi K2 ── 月之暗面万亿参数开源 MoE，MuonClip 优化器
 2025.08  GPT-5 ── OpenAI 统一系统架构，内置推理路由，SWE-bench 75%
 ━━━━━━━━━━━━━━━━━━━━━━━━ 2026 年 ━━━━━━━━━━━━━━━━━━━━━━━━
@@ -288,7 +288,7 @@ def select_model(requirements: dict) -> str:
 
 ---
 
-## 本节小结
+## 小结
 
 | 趋势 | 核心变化 | 对 Agent 开发的影响 |
 |------|---------|-------------------|
@@ -305,6 +305,8 @@ def select_model(requirements: dict) -> str:
 > ⏰ *注：模型技术发展极快，本节数据截至 **2026 年 4 月**。建议定期关注各厂商的发布动态和权威基准评测（如 LMArena、Open LLM Leaderboard、Chatbot Arena）获取最新信息。*
 
 ---
+
+*上一节：[2.5 Token、Temperature 与模型参数详解](./05_model_parameters.md)*
 
 *下一节：[2.7 基座模型架构详解](./07_model_architecture.md)*
 
@@ -331,3 +333,19 @@ def select_model(requirements: dict) -> str:
 [9] ABDIN M, JACOBS S A, AWAN A A, et al. Phi-4 technical report[R]. arXiv preprint arXiv:2412.08905, 2024.
 
 [10] MOONSHOT AI. Kimi K2: Open agentic intelligence[EB/OL]. 2025. https://huggingface.co/moonshotai/Kimi-K2-Instruct.
+
+---
+
+## 📰 最新论文速递
+
+> 🗓️ 本节由每日自动更新任务维护，最近更新：**2026 年 5 月 17 日**
+
+### [Cola DLM：连续隐空间扩散语言模型——非自回归文本生成新范式](https://arxiv.org/abs/2605.06548)
+
+**发表**：2026 年 5 月 7 日 | [arXiv:2605.06548](https://arxiv.org/abs/2605.06548)
+
+**核心贡献**：字节跳动 Seed 团队提出 Cola DLM，打破大语言模型必须自回归逐 token 生成的范式。该模型采用分层连续隐空间扩散架构：Text VAE 将文本映射到连续隐表示，block-causal 扩散 Transformer 在隐空间建模全局语义先验，最后解码生成文本。在 4 个研究问题、8 个基准的严格对比（含 ~20亿参数自回归基线）中验证了强扩展性，并已开源 Apache 2.0 许可的代码与检查点。
+
+**与本章关系**：对应 2.7 基座模型架构详解，代表语言模型从自回归范式向扩散范式探索的重要前沿，有助于理解未来基座模型的多样化架构方向。
+
+---

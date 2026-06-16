@@ -6,9 +6,11 @@
 
 # 🤖 Agent Learning: Learn Agent Development from Scratch
 
-**A systematic, comprehensive, and practice-oriented AI Agent development guide**
+**The complete open-source roadmap for learning AI Agents — from LLM basics to production-ready Agent systems.**
 
-**Agent Learning** (`agent_learning`) is an open-source AI Agent learning roadmap and hands-on tutorial covering LLM agents, AI agents, agentic workflows, multi-agent systems, RAG, tool use, memory, LangChain, LangGraph, MCP, and agentic RL.
+**Agent Learning** (`agent_learning`) is a systematic, practice-oriented AI Agent learning roadmap and hands-on tutorial covering LLM fundamentals, RAG, memory, tool use, function calling, agentic workflows, LangChain, LangGraph, MCP, multi-agent systems, evaluation, deployment, and agentic RL.
+
+> If you want to learn how to build AI Agents — not just use ChatGPT, but understand how agents retrieve knowledge, remember context, call tools, plan actions, collaborate, and run safely in production — this project is for you.
 
 **Daily auto-tracking of arXiv frontier papers — content stays cutting-edge, always.**
 
@@ -23,6 +25,23 @@
 <br>
 
 [<img src="https://img.shields.io/badge/📖_Read_Online_(中文)-4CAF50?style=for-the-badge" alt="Read Online Chinese">](https://Haozhe-Xing.github.io/agent_learning/zh/)&nbsp;&nbsp;&nbsp;[<img src="https://img.shields.io/badge/📖_Read_Online_(English)-2196F3?style=for-the-badge" alt="Read Online English">](https://Haozhe-Xing.github.io/agent_learning/en/)
+
+<br>
+
+<table>
+<tr>
+<td width="50%" align="center">
+<img src="scripts/agent2.png" width="100%" alt="Agent Learning online book screenshot - frontier research chapter">
+<br>
+<sub>Daily updated Agentic-RL frontier research chapter</sub>
+</td>
+<td width="50%" align="center">
+<img src="scripts/grpo_chapter.png" width="100%" alt="Agent Learning online book screenshot - GRPO chapter">
+<br>
+<sub>Step-by-step GRPO / GSPO learning content</sub>
+</td>
+</tr>
+</table>
 
 <br>
 
@@ -45,6 +64,27 @@
 - 🔔 **Never Miss a Breakthrough**: No need to manually track dozens of research feeds — this repo does it for you, so you can focus on learning and building.
 
 > 💡 This means the content you read here is **not static** — it evolves continuously with the latest advances in the AI Agent field.
+
+---
+
+## 👥 Who Is This For?
+
+- **Developers** who want to build real AI Agent applications instead of only prompting chatbots
+- **Students and beginners** who need a structured path from LLM basics to Agent systems
+- **LLM application engineers** working with RAG, tool calling, memory, LangGraph, MCP, and evaluation
+- **Researchers and builders** who want to connect frontier Agent papers with engineering practice
+- **Product and startup teams** exploring production-ready Agent workflows
+
+---
+
+## 🧭 Learning Paths
+
+| Path | Start Here | Goal |
+| ---- | ---------- | ---- |
+| **Beginner Path** | LLM basics → Prompt Engineering → Function Calling → RAG → Memory → ReAct | Understand how an Agent works end to end |
+| **Engineering Path** | Tool Layer → LangGraph → Evaluation → Security → Deployment → Observability | Build production-ready Agent systems |
+| **Research Path** | ReAct → Reflexion → MemGPT → PPO / DPO / GRPO → Agentic RL | Follow and understand frontier Agent research |
+| **Project Path** | Hello Agent → RAG QA Agent → Memory Agent → Data Analysis Agent → Coding Agent | Learn by building complete applications |
 
 ---
 
@@ -82,7 +122,7 @@
 </td>
 <td width="50%" align="center">
 
-**ReAct Reasoning Framework (Chapter 6)**
+**ReAct Reasoning Framework (Chapter 5)**
 
 <img src="src/en/svg/chapter_planning_02_react_loop.svg" width="420" alt="ReAct Reasoning Framework">
 
@@ -98,7 +138,7 @@
 <tr>
 <td width="50%" align="center">
 
-**Function Calling Complete Flow (Chapter 4)**
+**Function Calling Complete Flow (Chapter 3)**
 
 <img src="src/en/svg/chapter_tools_02_function_calling.svg" width="480" alt="Function Calling Flow">
 
@@ -107,7 +147,7 @@
 </td>
 <td width="50%" align="center">
 
-**RAG Retrieval-Augmented Generation (Chapter 7)**
+**RAG Retrieval-Augmented Generation (Chapter 6)**
 
 <img src="src/en/svg/chapter_rag_01_rag_flow.svg" width="480" alt="RAG Workflow">
 
@@ -123,7 +163,7 @@
 <tr>
 <td width="50%" align="center">
 
-**Three-Layer Memory Architecture (Chapter 5)**
+**Three-Layer Memory Architecture (Chapter 4)**
 
 <img src="src/en/svg/chapter_memory_01_memory_types.svg" width="480" alt="Three-Layer Memory Architecture">
 
@@ -132,7 +172,7 @@
 </td>
 <td width="50%" align="center">
 
-**Prompt Engineering vs Context Engineering (Chapter 8)**
+**Prompt Engineering vs Context Engineering (Chapter 7)**
 
 <img src="src/en/svg/chapter_context_01_comparison.svg" width="480" alt="Prompt Engineering vs Context Engineering">
 
@@ -148,7 +188,7 @@
 <tr>
 <td width="50%" align="center">
 
-**Three Multi-Agent Communication Patterns (Chapter 14)**
+**Three Multi-Agent Communication Patterns (Chapter 15)**
 
 <img src="src/en/svg/chapter_multi_agent_02_communication.svg" width="480" alt="Multi-Agent Communication Patterns">
 
@@ -157,7 +197,7 @@
 </td>
 <td width="50%" align="center">
 
-**MCP / A2A / ANP Protocol Comparison (Chapter 15)**
+**MCP / A2A / ANP Protocol Comparison (Chapter 16)**
 
 <img src="src/en/svg/chapter_protocol_03_three_protocols.svg" width="480" alt="Three Protocol Comparison">
 
@@ -207,9 +247,9 @@ This book includes **5 interactive HTML animations** to help you intuitively und
 | Animation                      | Chapter    | Description                                                                 |
 | ------------------------------ | ---------- | --------------------------------------------------------------------------- |
 | 🔄 **Perceive-Think-Act Cycle** | Chapter 1  | Dynamic demonstration of Agent's core loop                                  |
-| 💡 **ReAct Reasoning Process**  | Chapter 6  | Shows the alternating Thought → Action → Observation process              |
-| 🔧 **Function Calling**         | Chapter 4  | Complete tool invocation flow animation                                     |
-| 📚 **RAG Retrieval Flow**       | Chapter 7  | From document chunking to vector retrieval to answer generation             |
+| 💡 **ReAct Reasoning Process**  | Chapter 5  | Shows the alternating Thought → Action → Observation process              |
+| 🔧 **Function Calling**         | Chapter 3  | Complete tool invocation flow animation                                     |
+| 📚 **RAG Retrieval Flow**       | Chapter 6  | From document chunking to vector retrieval to answer generation             |
 | 🎯 **GRPO Sampling Process**    | Chapter 10 | Visualization of intra-group multi-output sampling and reward normalization |
 
 > 💡 Interactive animations are only available in the [online e-book](https://Haozhe-Xing.github.io/agent_learning). Local builds can also preview them.
@@ -341,14 +381,14 @@ All forms of contribution are welcome!
 git clone https://github.com/YOUR_USERNAME/agent_learning.git
 
 # Create a feature branch
-git checkout -b feature/improve-chapter-4
+git checkout -b feature/improve-chapter-3
 
 # Local preview
 ./serve.sh
 
 # Commit and push
-git commit -m "feat: improve Chapter 4 tool calling code examples"
-git push origin feature/improve-chapter-4
+git commit -m "feat: improve Chapter 3 tool calling code examples"
+git push origin feature/improve-chapter-3
 ```
 
 ### Content Organization Conventions
@@ -358,6 +398,33 @@ git push origin feature/improve-chapter-4
 - Chinese SVG illustrations go in `src/zh/svg/`, English versions in `src/en/svg/`, naming format: `chapter_xxx_description.svg`
 - Chinese interactive animations go in `src/zh/animations/`, English versions in `src/en/animations/`
 
+### Paper Reading Template
+
+All paper reading and frontier research sections should follow a consistent structure so that readers can quickly understand why a paper matters, what it contributed at the time, and how it connects to real Agent engineering.
+
+Use the following template for each representative paper:
+
+```markdown
+### Paper Title: one-sentence explanation of the problem it solves
+
+- **Paper link**:
+- **Code / project link**:
+- **Year / organization**:
+- **Problem addressed at the time**:
+- **Core contribution**:
+- **Method breakdown**:
+- **Engineering insight for Agent systems**:
+- **Limitations**:
+```
+
+Quality requirements:
+
+- **Link to the original source**: include the arXiv, conference, official blog, GitHub, or project page whenever available.
+- **Explain historical contribution**: describe what problem the work solved when it appeared, not only what it does.
+- **Connect to engineering practice**: explain how the idea affects Agent memory, tools, planning, evaluation, safety, training, or deployment.
+- **State limitations**: clarify what the paper does not solve, where assumptions are strong, or whether the result is mainly benchmark-driven.
+- **Avoid paper lists without synthesis**: after several papers, add a short comparison table or narrative summary explaining how the works relate to each other.
+
 ---
 
 ## 📄 License
@@ -366,9 +433,26 @@ This project is open-sourced under the [MIT License](LICENSE).
 
 ---
 
+## 🗺️ Project Roadmap
+
+- [x] Chinese / English online book powered by mdBook
+- [x] 120+ original SVG architecture diagrams and flowcharts
+- [x] Interactive animations for core Agent concepts
+- [x] Paper reading sections for key Agent research
+- [x] Agentic RL chapters covering PPO / DPO / GRPO
+- [ ] Runnable Agent example projects and templates
+- [ ] Agent glossary and keyword cheat sheet
+- [ ] Agent architecture diagram gallery
+- [ ] Interview questions and self-check exercises
+- [ ] Production-ready Agent template with evaluation and observability
+
+---
+
 ## ⭐ Star History
 
 If this project helps you, please give it a Star ⭐ — it's the greatest encouragement for the author!
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Haozhe-Xing/agent_learning&type=Date)](https://www.star-history.com/#Haozhe-Xing/agent_learning&Date)
 
 ---
 

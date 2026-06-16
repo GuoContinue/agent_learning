@@ -4,7 +4,7 @@
 
 ---
 
-经过前四节的学习，你已经掌握了 Claude Code 的架构原理、权限系统、扩展机制和多 Agent 能力。本节是第15章的收官之作，聚焦于一个核心问题：**如何在真实的团队和生产环境中，可靠地使用 Claude Code？**
+经过前四节的学习，你已经掌握了 Claude Code 的架构原理、权限系统、扩展机制和多 Agent 能力。本节是第14章的收官之作，聚焦于一个核心问题：**如何在真实的团队和生产环境中，可靠地使用 Claude Code？**
 
 这不是理论，而是来自工程实践的经验总结。
 
@@ -69,16 +69,14 @@ Anthropic API 的缓存机制只缓存 System Prompt 的静态部分。如果把
 
 ```markdown
 ## 完成任何代码修改后，必须执行
-```bash
-pnpm test:unit          # 单元测试（<30秒）
-pnpm lint               # ESLint + Prettier 检查
-pnpm type-check         # TypeScript 类型检查
-```
+
+    pnpm test:unit          # 单元测试（<30秒）
+    pnpm lint               # ESLint + Prettier 检查
+    pnpm type-check         # TypeScript 类型检查
 
 涉及数据库变更时，额外执行：
-```bash
-pnpm test:integration   # 集成测试（需要测试数据库）
-```
+
+    pnpm test:integration   # 集成测试（需要测试数据库）
 ```
 
 #### ④ 已知风险区域
@@ -120,10 +118,10 @@ pnpm test:integration   # 集成测试（需要测试数据库）
 
 # ✅ 正确：主文件做目录，详细内容拆分
 ## 架构约束
-核心规则见此处（10行），完整说明见 [docs/architecture.md](./docs/architecture.md)
+核心规则见此处（10行），完整说明见 docs/architecture.md（见 `./docs/architecture.md`）
 
 ## 代码风格
-见 [.eslintrc.js](./.eslintrc.js) 和 [docs/code-style.md](./docs/code-style.md)
+见 [.eslintrc.js](./.eslintrc.js) 和 docs/code-style.md（见 `./docs/code-style.md`）
 ```
 
 **黄金法则**：CLAUDE.md 主文件控制在 150-300 行，用链接引用详细文档。
@@ -221,9 +219,9 @@ _最后更新：2026-04-01 | 适用范围：所有在此代码库工作的 AI Ag
 **项目**：[项目名称]  
 **技术栈**：TypeScript 5.3 / Node.js 20 / PostgreSQL 15 / Prisma / Jest  
 **文档索引**：
-- 架构设计：[docs/architecture.md](./docs/architecture.md)
-- API 规范：[docs/api-spec.md](./docs/api-spec.md)
-- 测试策略：[docs/testing.md](./docs/testing.md)
+- 架构设计：docs/architecture.md（见 `./docs/architecture.md`）
+- API 规范：docs/api-spec.md（见 `./docs/api-spec.md`）
+- 测试策略：docs/testing.md（见 `./docs/testing.md`）
 
 ---
 
@@ -635,15 +633,15 @@ npm update -g @anthropic-ai/claude-code
 
 ## 六、本章总结
 
-### 第15章知识回顾
+### 第14章知识回顾
 
 | 节次 | 核心内容 | 关键洞察 |
 |------|---------|---------|
-| **15.1 基础与架构** | 六层架构，System Prompt 静/动态分区 | Prompt Caching 是降低成本的核心设计 |
-| **15.2 权限系统** | 7 种权限模式，6 阶段决策流水线 | bypassPermissions 生产中绝对不用 |
-| **15.3 扩展机制** | MCP、Hooks、Skills、Sub-agents | Hooks 的 PreToolUse 是最强的拦截点 |
-| **15.4 多 Agent 协作** | Coordinator/Worker 模式，ULTRAPLAN | 任务拆分是多 Agent 成功的关键 |
-| **15.5 生产实践** | CLAUDE.md、团队协作、安全、成本 | 工程规范比工具本身更重要 |
+| **14.1 认识 Claude Code** | 从零到上手，核心能力全景 | Prompt Caching 是降低成本的核心设计 |
+| **14.2 核心架构深度解析** | 六层架构，System Prompt 静/动态分区 | 理解架构才能用好工具 |
+| **14.3 源码解密：System Prompt 与权限工程** | 7 种权限模式，6 阶段决策流水线 | bypassPermissions 生产中绝对不用 |
+| **14.4 高级用法：MCP、Hooks 与 Skills** | MCP、Hooks、Skills、Sub-agents | Hooks 的 PreToolUse 是最强的拦截点 |
+| **14.5 生产实践** | CLAUDE.md、团队协作、安全、成本 | 工程规范比工具本身更重要 |
 
 ### Claude Code 代表的工程哲学
 
@@ -662,12 +660,12 @@ Claude Code 不只是一个 AI 编程工具——它代表了一种新的**人�
 
 正如第8章 Harness Engineering 所描述的，工程师的角色正在发生根本性转变：
 
-![AI 时代工程师价値转变](../svg/chapter_claude_code_05_engineer_value.svg)
+![AI 时代工程师价值转变](../svg/chapter_claude_code_05_engineer_value.svg)
 掌握 Claude Code 不是终点——理解如何**设计约束系统、构建可靠的 AI 工作流、在团队中建立 AI 协作规范**，才是 AI 时代工程师的核心竞争力。
 
 ---
 
-> 🎉 **感谢你完成第15章的全部内容！**  
+> 🎉 **感谢你完成第14章的全部内容！**  
 > 从 Claude Code 的架构原理到生产实践，从权限系统到多 Agent 协作，你已经系统地掌握了在生产环境中用好 Claude Code 所需的全部知识。  
 > 接下来，去你的项目中创建第一个 `CLAUDE.md` 吧——这是真正掌握本章精髓的开始。
 

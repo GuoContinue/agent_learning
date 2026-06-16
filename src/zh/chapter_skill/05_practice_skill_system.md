@@ -15,7 +15,7 @@
 
 ## 项目结构
 
-```
+```text
 skill_agent/
 ├── main.py                    # 主入口
 ├── skill_manager.py           # 技能管理器
@@ -273,7 +273,7 @@ from skill_manager import SkillManager
 class SkillAgent:
     """技能驱动的 Agent"""
     
-    def __init__(self, skill_manager: SkillManager, model: str = "gpt-4.1"):
+    def __init__(self, skill_manager: SkillManager, model: str = "gpt-4o"):
         self.skill_manager = skill_manager
         self.client = OpenAI()
         self.model = model
@@ -414,7 +414,7 @@ if __name__ == "__main__":
 
 ## 运行效果
 
-```
+```text
 ============================================================
   🤖 技能驱动的 Agent 系统
 ============================================================
@@ -469,7 +469,7 @@ if __name__ == "__main__":
 | **多 Agent 协作** | 每个技能对应一个专家 Agent，协调 Agent 负责编排 |
 | **技能市场** | 类似 npm，支持技能的发布、搜索和安装 |
 
-## 本节小结
+## 小结
 
 通过这个实战项目，我们构建了一个完整的技能驱动 Agent 系统：
 

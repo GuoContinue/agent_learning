@@ -33,7 +33,7 @@
 
 ## 🔗 学习路径
 
-> **前置知识**：[第1章 什么是 Agent？](../chapter_intro/README.md)、[附录 F：开发环境搭建](../chapter_setup/README.md)
+> **相关章节**：[第1章 什么是 Agent？](../chapter_intro/README.md)、[附录 F：开发环境搭建](../chapter_setup/README.md)
 >
 > **后续推荐**：
 > - 👉 [第3章 工具调用（Tool Use / Function Calling）](../chapter_tools/README.md) — Agent 的核心能力
@@ -45,7 +45,7 @@
 
 本章从直觉层面解释大语言模型的工作原理，然后系统讲解如何通过 Prompt Engineering 与模型高效对话，介绍常见的提示策略，并手把手带你完成第一次 API 调用。最后，我们深入探讨 Token、Temperature 等关键参数，帮助你真正"驾驭"语言模型，并进一步延伸到基座模型架构、训练数据准备和 Prompt 自动调优。
 
-## 本章结构
+## 📚 本章结构
 
 | 小节 | 内容 | 难度 |
 |------|------|------|

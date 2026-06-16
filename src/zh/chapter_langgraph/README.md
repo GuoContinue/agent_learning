@@ -4,42 +4,13 @@
 
 ---
 
-
-## 🎓 学习目标
-
-完成本章学习后，你将能够：
-
-- ✅ 理解为什么复杂 Agent 需要图结构来管理状态
-- ✅ 掌握 LangGraph 的节点、边和状态机的设计
-- ✅ 实现条件路由、循环控制和 Human-in-the-Loop
-- ✅ 构建一个工作流自动化 Agent
-
-## ⏱️ 预计学习时间
-
-约 **120-150 分钟**（含实战）
-
-## 💡 前置知识
-
-- 完成第12章（LangChain）
-- 了解有向图的基本概念
-- pip install langgraph langchain
-
----
-
-## 🔗 学习路径
-
-> **后续推荐**：
-> - 👉 [第15章 多 Agent 协作](../chapter_multi_agent/README.md)
-
----
-
 ## 本章概览
 
 LangGraph 是 LangChain 团队推出的下一代 Agent 框架。相比于线性的 Chain，LangGraph 通过有向图（Directed Graph）构建 Agent 工作流，原生支持循环、条件分支和持久状态——这些正是构建复杂 Agent 系统所必需的能力。
 
-## 本章目标
+## 🎓 学习目标
 
-学完本章，你将能够：
+完成本章学习后，你将能够：
 
 - ✅ 理解图结构相比线性链的优势
 - ✅ 掌握 LangGraph 的核心概念：节点、边、状态
@@ -48,7 +19,7 @@ LangGraph 是 LangChain 团队推出的下一代 Agent 框架。相比于线性�
 - ✅ 掌握 Human-in-the-Loop 人机协作模式
 - ✅ 构建一个工作流自动化 Agent
 
-## 本章结构
+## 📑 本章结构
 
 | 小节 | 内容 | 难度 |
 |------|------|------|

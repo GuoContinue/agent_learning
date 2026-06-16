@@ -21,7 +21,10 @@ __pycache__/
 .env
 venv/
 .venv/
-.zhihu_blog/
+zhihu_blog/
+
+scripts
+scripts/
 # macOS
 .DS_Store
 

@@ -13,7 +13,7 @@
 ```
 # 模型实际输出的各种"意外"
 
-✗ 有 Markdown 包裹：```json { "key": "value" } ```
+✗ 有 Markdown 包裹：\`\`\`json { "key": "value" } \`\`\`
 ✗ 末尾多余文字：{"key": "value"} 以上是分析结果
 ✗ 单引号代替双引号：{'key': 'value'}
 ✗ 注释（JSON 不支持）：{"key": "value" // 这是注释}
@@ -332,7 +332,7 @@ class ExtractionResult(BaseModel):
 
 # ── 调用 API，使用 parse() 方法直接得到 Pydantic 对象 ──
 response = client.beta.chat.completions.parse(
-    model="gpt-4.1",   # 支持 Structured Outputs 的版本
+    model="gpt-4o",   # 支持 Structured Outputs 的版本
     messages=[
         {"role": "system", "content": "你是一个信息提取助手，从文本中提取人员信息。"},
         {"role": "user", "content": "张三，男，28岁，邮箱 zhangsan@example.com。李四，35岁。"},
@@ -353,7 +353,7 @@ print(type(result.persons[0].age))  # <class 'int'>，类型已保证
 
 ### Anthropic Claude 结构化输出
 
-Claude 的实现思路不同于 OpenAI——它没有专门的 `response_format` 参数，而是复用了**工具调用（Tool Use）**机制。核心思路是：定义一个"假工具"，其输入 Schema 就是你想要的 JSON 格式，然后通过 `tool_choice` 强制模型调用该工具。
+Claude 的实现思路不同于 OpenAI——它没有专门的 `response_format` 参数，而是复用了**工具调用（Tool Use）** 机制。核心思路是：定义一个"假工具"，其输入 Schema 就是你想要的 JSON 格式，然后通过 `tool_choice` 强制模型调用该工具。
 
 这种方式的好处是与 Claude 的 Agent 工具调用体系无缝集成；缺点是需要额外的工具定义，且返回结果嵌套在 `tool_use` 块中，需要一步提取：
 
@@ -656,7 +656,7 @@ def extract_with_retry(
     text: str,
     schema_class: type[BaseModel],
     max_retries: int = 3,
-    model: str = "gpt-4.1-mini",
+    model: str = "gpt-4o-mini",
 ) -> BaseModel:
     """
     带重试的结构化提取
@@ -786,7 +786,7 @@ class StructuredOutputHarness(Generic[T]):
         self,
         schema_class: Type[T],
         backend: OutputBackend = OutputBackend.OPENAI,
-        model: str = "gpt-4.1",
+        model: str = "gpt-4o",
         max_retries: int = 3,
         retry_delay: float = 0.5,
     ):
@@ -945,7 +945,7 @@ class SentimentAnalysis(BaseModel):
 harness = StructuredOutputHarness(
     SentimentAnalysis,
     backend=OutputBackend.OPENAI,
-    model="gpt-4.1-mini",
+    model="gpt-4o-mini",
     max_retries=3,
 )
 
@@ -1078,7 +1078,7 @@ detail = harness_detail.extract(f"{text}\n\n已确认类别：{basic.category}")
 
 ---
 
-## 本节小结
+## 小结
 
 | 技术 | 关键点 |
 |------|--------|

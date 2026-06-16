@@ -6,9 +6,11 @@
 
 # 🤖 Agent Learning：从零开始学 Agent
 
-**一本系统、全面、实战导向的 AI Agent 开发教程**
+**一份从 LLM 基础到生产级 Agent 系统的完整开源学习路线图。**
 
-**Agent Learning**（`agent_learning`）是一个开源 AI Agent 学习路线图与实战教程，覆盖 LLM Agent、AI Agent、智能体开发、多智能体系统、RAG、工具调用、记忆系统、LangChain、LangGraph、MCP、Agentic RL 等主题。
+**Agent Learning**（`agent_learning`）是一个系统、实战导向的 AI Agent 学习路线图与动手教程，覆盖 LLM 基础、RAG、记忆系统、工具调用、Function Calling、Agentic Workflow、LangChain、LangGraph、MCP、多智能体系统、评估、部署和 Agentic RL。
+
+> 如果你想系统学习如何构建 AI Agent，而不只是会用 ChatGPT，本项目会从 LLM 基础讲到 RAG、Memory、Tool Use、Planning、多 Agent、LangGraph、MCP、部署评估与生产级 Agent 系统。
 
 **每日自动追踪 arXiv 前沿论文，内容持续更新，始终紧跟最新进展**
 
@@ -23,6 +25,23 @@
 <br>
 
 [<img src="https://img.shields.io/badge/📖_在线阅读（中文）-4CAF50?style=for-the-badge" alt="在线阅读中文版">](https://Haozhe-Xing.github.io/agent_learning/zh/)&nbsp;&nbsp;&nbsp;[<img src="https://img.shields.io/badge/📖_Read_Online_(English)-2196F3?style=for-the-badge" alt="Read Online English">](https://Haozhe-Xing.github.io/agent_learning/en/)
+
+<br>
+
+<table>
+<tr>
+<td width="50%" align="center">
+<img src="scripts/agent2.png" width="100%" alt="Agent Learning 在线书截图 - 前沿研究章节">
+<br>
+<sub>每日更新的 Agentic-RL 前沿研究章节</sub>
+</td>
+<td width="50%" align="center">
+<img src="scripts/grpo_chapter.png" width="100%" alt="Agent Learning 在线书截图 - GRPO 章节">
+<br>
+<sub>循序渐进的 GRPO / GSPO 学习内容</sub>
+</td>
+</tr>
+</table>
 
 <br>
 
@@ -45,6 +64,33 @@
 - 🔔 **不错过任何突破**：无需手动追踪大量研究源，本仓库自动完成，让你专注于学习和构建。
 
 > 💡 这意味着你在这里阅读的内容**不是静态的** —— 它会随着 AI Agent 领域的最新进展持续演进。
+
+---
+
+## 👥 适合谁阅读？
+
+- **开发者**：想真正构建 AI Agent 应用，而不只是写 Prompt 调聊天机器人
+- **学生和初学者**：需要一条从 LLM 基础到 Agent 系统的系统学习路径
+- **LLM 应用工程师**：正在实践 RAG、工具调用、记忆系统、LangGraph、MCP 和评估
+- **研究者和技术创作者**：希望把前沿 Agent 论文和工程实践连接起来
+- **产品和创业团队**：想理解生产级 Agent 工作流如何设计与落地
+
+---
+
+## 🧭 学习路径
+
+如果你不知道从哪里开始，可以直接按下面的目标选择阅读顺序。
+
+| 你的目标 | 推荐阅读路线 |
+| -------- | ------------ |
+| **快速理解 Agent 是什么** | 第 1 章 Agent 基础 → 第 2 章大语言模型基础 → 第 3 章工具调用 → 第 5.2 节 ReAct → 附录 F.4 Hello Agent |
+| **了解大模型，并学习使用 Codex、Claude Code 等 AI 编程工具** | 第 2 章大语言模型基础 → 第 2.2 节 Prompt Engineering → 第 2.4 节模型 API 调用入门 → 第 14 章 Claude Code 深度解析 → 第 20 章 AI 编程助手 |
+| **构建一个能用的 Agent 应用** | 第 3 章工具调用 → 第 4 章记忆系统 → 第 5 章规划与推理 → 第 6 章 RAG → 第 7 章上下文工程 → 第 8 章 Harness Engineering |
+| **把 Agent 上线到生产环境** | 第 8 章 Harness Engineering → 第 17 章评估与优化 → 第 18 章安全与可靠性 → 第 19 章部署与生产化 |
+| **掌握 LangChain / LangGraph 等框架** | 第 3 章工具调用 → 第 5 章规划与推理 → 第 6 章 RAG → 第 11 章 LangChain → 第 12 章 LangGraph → 第 13 章框架概览 |
+| **理解 Agent 前沿论文和研究脉络** | 第 5.2 节 ReAct → 第 5.4 节反思机制 → 第 5.7 节规划论文解读 → 第 4.6 节记忆论文解读 → 第 6.6 节 RAG 论文解读 → 第 15.6 节多 Agent 论文解读 |
+| **学习 Agentic-RL 和自我进化** | 第 2.8 节训练数据准备 → 第 10.1 节 Agentic-RL → 第 10.4 节 DPO → 第 10.5 节 GRPO / GSPO → 第 10.8 节 Agent 微调 → 第 10.9 节数据飞轮 → 第 10.10 节 Self-Evolution Agent |
+| **边做项目边学习** | 附录 F 开发环境搭建 → 第 3 章工具调用 → 第 6 章 RAG → 第 12 章 LangGraph → 第 20 章 AI 编程助手 → 第 21 章数据分析 Agent → 第 22 章多模态 Agent |
 
 ---
 
@@ -82,7 +128,7 @@
 </td>
 <td width="50%" align="center">
 
-**ReAct 推理框架（第 6 章）**
+**ReAct 推理框架（第 5 章）**
 
 <img src="src/zh/svg/chapter_planning_02_react_loop.svg" width="420" alt="ReAct 推理框架">
 
@@ -98,7 +144,7 @@
 <tr>
 <td width="50%" align="center">
 
-**Function Calling 完整流程（第 4 章）**
+**Function Calling 完整流程（第 3 章）**
 
 <img src="src/zh/svg/chapter_tools_02_function_calling.svg" width="480" alt="Function Calling 流程">
 
@@ -107,7 +153,7 @@
 </td>
 <td width="50%" align="center">
 
-**RAG 检索增强生成（第 7 章）**
+**RAG 检索增强生成（第 6 章）**
 
 <img src="src/zh/svg/chapter_rag_01_rag_flow.svg" width="480" alt="RAG 工作原理">
 
@@ -123,7 +169,7 @@
 <tr>
 <td width="50%" align="center">
 
-**记忆系统三层架构（第 5 章）**
+**记忆系统三层架构（第 4 章）**
 
 <img src="src/zh/svg/chapter_memory_01_memory_types.svg" width="480" alt="记忆系统三层架构">
 
@@ -132,7 +178,7 @@
 </td>
 <td width="50%" align="center">
 
-**提示工程 vs 上下文工程（第 8 章）**
+**提示工程 vs 上下文工程（第 7 章）**
 
 <img src="src/zh/svg/chapter_context_01_comparison.svg" width="480" alt="提示工程 vs 上下文工程">
 
@@ -148,7 +194,7 @@
 <tr>
 <td width="50%" align="center">
 
-**多 Agent 三种通信模式（第 14 章）**
+**多 Agent 三种通信模式（第 15 章）**
 
 <img src="src/zh/svg/chapter_multi_agent_02_communication.svg" width="480" alt="多 Agent 通信模式">
 
@@ -157,7 +203,7 @@
 </td>
 <td width="50%" align="center">
 
-**MCP / A2A / ANP 三协议对比（第 15 章）**
+**MCP / A2A / ANP 三协议对比（第 16 章）**
 
 <img src="src/zh/svg/chapter_protocol_03_three_protocols.svg" width="480" alt="三协议对比">
 
@@ -207,9 +253,9 @@
 | 动画 | 对应章节 | 说明 |
 |------|----------|------|
 | 🔄 **感知-思考-行动循环** | 第 1 章 | 动态演示 Agent 的核心运行循环 |
-| 💡 **ReAct 推理过程** | 第 6 章 | 展示 Thought → Action → Observation 的交替过程 |
-| 🔧 **Function Calling** | 第 4 章 | 工具调用的完整流程动画 |
-| 📚 **RAG 检索流程** | 第 7 章 | 从文档切分到向量检索再到生成回答 |
+| 💡 **ReAct 推理过程** | 第 5 章 | 展示 Thought → Action → Observation 的交替过程 |
+| 🔧 **Function Calling** | 第 3 章 | 工具调用的完整流程动画 |
+| 📚 **RAG 检索流程** | 第 6 章 | 从文档切分到向量检索再到生成回答 |
 | 🎯 **GRPO 采样过程** | 第 10 章 | 组内多输出采样与奖励标准化的可视化 |
 
 > 💡 交互动画仅在 [在线电子书](https://Haozhe-Xing.github.io/agent_learning) 中可体验，本地构建也可预览。
@@ -340,14 +386,14 @@ export OPENAI_API_KEY="your-key-here"
 git clone https://github.com/YOUR_USERNAME/agent_learning.git
 
 # 创建特性分支
-git checkout -b feature/improve-chapter-4
+git checkout -b feature/improve-chapter-3
 
 # 本地预览
 ./serve.sh
 
 # 提交并推送
-git commit -m "feat: 改进第4章工具调用示例代码"
-git push origin feature/improve-chapter-4
+git commit -m "feat: 改进第3章工具调用示例代码"
+git push origin feature/improve-chapter-3
 ```
 
 ### 内容组织约定
@@ -357,6 +403,33 @@ git push origin feature/improve-chapter-4
 - 中文版 SVG 插图放在 `src/zh/svg/`，英文版放在 `src/en/svg/`，命名格式 `chapter_xxx_描述.svg`
 - 中文版交互动画放在 `src/zh/animations/`，英文版放在 `src/en/animations/`
 
+### 论文解读模板
+
+所有论文解读和前沿进展章节应采用统一结构，帮助读者快速理解一篇论文为什么重要、当时解决了什么问题，以及它如何影响真实 Agent 工程。
+
+每篇代表性论文建议使用以下模板：
+
+```markdown
+### 论文名：一句话说明它解决什么问题
+
+- **论文链接**：
+- **代码 / 项目链接**：
+- **发表时间 / 机构**：
+- **当时解决的问题**：
+- **核心贡献**：
+- **方法拆解**：
+- **对 Agent 工程的启发**：
+- **局限性**：
+```
+
+质量要求：
+
+- **链接到原始来源**：优先提供 arXiv、会议页面、官方博客、GitHub 或项目主页。
+- **说明历史贡献**：不要只说论文做了什么，还要说明它在发表时解决了什么关键问题。
+- **连接工程实践**：说明该工作对 Agent 记忆、工具、规划、评估、安全、训练或部署有什么启发。
+- **写清局限性**：说明论文没有解决什么、依赖哪些强假设，或者是否主要是 benchmark 驱动。
+- **避免只堆论文列表**：多篇论文之后，应补充对比表或脉络小结，说明这些工作之间的关系。
+
 ---
 
 ## 📄 许可证
@@ -365,9 +438,26 @@ git push origin feature/improve-chapter-4
 
 ---
 
+## 🗺️ 项目路线图
+
+- [x] 基于 mdBook 的中英文在线书
+- [x] 120+ 原创 SVG 架构图和流程图
+- [x] Agent 核心概念交互式动画
+- [x] 关键 Agent 论文精读章节
+- [x] 覆盖 PPO / DPO / GRPO 的 Agentic RL 内容
+- [ ] 可运行 Agent 示例项目和模板
+- [ ] Agent 术语表与关键词速查表
+- [ ] Agent 架构图合集
+- [ ] 面试题和自测题
+- [ ] 带评估与可观测性的生产级 Agent 模板
+
+---
+
 ## ⭐ Star History
 
 如果这个项目对你有帮助，请给个 Star ⭐，这是对作者最大的鼓励！
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Haozhe-Xing/agent_learning&type=Date)](https://www.star-history.com/#Haozhe-Xing/agent_learning&Date)
 
 ---
 
